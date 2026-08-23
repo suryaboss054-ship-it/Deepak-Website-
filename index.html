@@ -154,7 +154,42 @@ section {
     width: 80%;
     border: 0;
     border-top: 1px solid #555;
-}</style>
+}.gallery-section {
+    background: #f2f2f2;
+    padding: 60px 20px;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.gallery-container img,
+.gallery-box {
+    width: 220px;
+    height: 160px;
+    border-radius: 15px;
+}
+
+.gallery-container img {
+    object-fit: contain;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.gallery-box {
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }</style>
 </head>
 
 <body>
@@ -214,7 +249,31 @@ section {
 
     </div>
 </section>
+<section id="gallery" class="gallery-section">
 
+    <h2>Our Gallery</h2>
+    <p>Our latest work and creative designs</p>
+
+    <div class="gallery-container">
+
+        <img src="logo.png" alt="Deepak Website Logo">
+
+        <div class="gallery-box">
+            Website Design
+        </div>
+
+        <div class="gallery-box">
+            Mobile Friendly
+        </div>
+
+        <div class="gallery-box">
+            Professional Work
+        </div>
+
+    </div>
+
+</section>
+    <a href="#gallery">Gallery</a>
 <section id="contact" style="background:white;">
     <h2>Contact Us</h2>
 
