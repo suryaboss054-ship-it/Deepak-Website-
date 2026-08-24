@@ -149,7 +149,26 @@ button {
 section {
     padding: 50px 20px;
 }
+.contact-form {
+    max-width: 500px;
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+    }
 .services-container {
     display: flex;
     justify-content: center;
@@ -363,7 +382,17 @@ button:hover {
 </section>
     <a href="#gallery">Gallery</a>
 <section id="contact" style="background:white;">
-  
+  <form class="contact-form" onsubmit="sendMessage(event)">
+
+    <input type="text" id="name" placeholder="Enter your name" required>
+
+    <input type="email" id="email" placeholder="Enter your email" required>
+
+    <textarea id="message" placeholder="Write your message" required></textarea>
+
+    <button type="submit">Send Message</button>
+
+  </form>
     <h2>Contact Us</h2>
 
     <p>Humse sampark karne ke liye neeche button dabayein.</p>
@@ -415,6 +444,15 @@ document.querySelectorAll("#navMenu a").forEach(function(link) {
     });
 });
     </script>
+<script>
+function sendMessage(event) {
+    event.preventDefault();
+
+    alert("Thank you! Your message has been received. ❤️");
+
+    document.querySelector(".contact-form").reset();
+}
+</script>
 </script>
 
 </body>
