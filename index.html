@@ -291,7 +291,7 @@ button {
 button:hover {
     transform: scale(1.05);
 }</style>
-</hea\u003C/head>d>
+</hea\u003C/head>
 
 <body>
 <div id="loader">
@@ -445,6 +445,27 @@ document.querySelectorAll("#navMenu a").forEach(function(link) {
 });
     </script>
 <script>
+function sendMessage(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const text =
+        "Hello Deepak,%0A%0A" +
+        "Name: " + name + "%0A" +
+        "Email: " + email + "%0A%0A" +
+        "Message: " + message;
+
+    window.open(
+        "https://wa.me/917355745605?text=" + text,
+        "_blank"
+    );
+}
+</script>
+    
+    <script>
 function sendMessage(event) {
     event.preventDefault();
 
