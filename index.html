@@ -27,7 +27,36 @@ body {
     justify-content: center;
     gap: 12px;
 }
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #111;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
 
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #444;
+    border-top: 5px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+    }
 .
 
 nav {
@@ -215,7 +244,10 @@ button:hover {
 </hea\u003C/head>d>
 
 <body>
-
+<div id="loader">
+    <div class="spinner"></div>
+    <p>Loading Deepak Website...</p>
+</div>
 <div class="header">
     <img src="logo.png" class="website-logo" alt="Deepak Website Logo">
     <h2>Deepak Website</h2>
@@ -338,7 +370,11 @@ button:hover {
             
 
     
-</section>
+<<script>
+window.addEventListener("load", function() {
+    document.getElementById("loader").style.display = "none";
+});
+</script>
 
 
 
