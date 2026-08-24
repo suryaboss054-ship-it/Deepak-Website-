@@ -110,18 +110,7 @@ nav a {
 .hero p {
     font-size: 20px;
     margin-bottom: 30px;
-}#topBtn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    border-radius: 50%;
-    font-size: 24px;
-    display: none;
-    z-index: 1000;
-    }
+}
 button:active,
 .social-links a:active {
     transform: scale(0.95);
@@ -412,24 +401,7 @@ window.addEventListener("load", function() {
     document.getElementById("loader").style.display = "none";
 });
 
-<script>
-window.addEventListener("scroll", function() {
-    const topBtn = document.getElementById("topBtn");
 
-    if (window.scrollY > 300) {
-        topBtn.style.display = "block";
-    } else {
-        topBtn.style.display = "none";
-    }
-});
-
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-}<button id="topBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})">
-    ↑ </button>
 </script>
 
 </body>
