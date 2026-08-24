@@ -430,7 +430,8 @@ function scrollToTop() {
     });
 }
 </script>
-<button id="topBtn" onclick="scrollToTop()">↑</button>
-
+<button id="topBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+    ↑
+</button>
 </body>
 </html>
