@@ -38,7 +38,23 @@ body {
     justify-content: center;
     z-index: 9999;
 }
+<script>
+function revealSections() {
+    const sections = document.querySelectorAll(".reveal");
 
+    sections.forEach(function(section) {
+        const position = section.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+
+        if (position < screenHeight - 100) {
+            section.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealSections);
+window.addEventListener("load", revealSections);
+</script>
 .spinner {
     width: 50px;
     height: 50px;
@@ -47,7 +63,16 @@ body {
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
 
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -277,9 +302,9 @@ button:hover {
         Yahan aapko meri services aur contact information milegi.
     </p>
 </section>
-
+<section id="about" class="reveal">
 <section id="services">
-    <h2>Our Services</h2>
+  <section id="services" class="reveal">  <h2>Our Services</h2>
 
     <div class="services-container">
 
@@ -304,7 +329,7 @@ button:hover {
     </div>
 </section>
 <section id="gallery" class="gallery-section">
-
+<section id="gallery" class="gallery-section reveal">
     <h2>Our Gallery</h2>
     <p>Our latest work and creative designs</p>
 
@@ -329,6 +354,7 @@ button:hover {
 </section>
     <a href="#gallery">Gallery</a>
 <section id="contact" style="background:white;">
+  <section id="contact" class="reveal">
     <h2>Contact Us</h2>
 
     <p>Humse sampark karne ke liye neeche button dabayein.</p>
