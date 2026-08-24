@@ -17,7 +17,43 @@ body {
     background: #f2f2f2;
     text-align: center;
 }
+.menu-bar {
+    background: #222;
+    padding: 10px;
+}
 
+.menu-btn {
+    display: none;
+}
+
+#navMenu {
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+
+    .menu-btn {
+        display: block;
+        margin: auto;
+        padding: 10px 15px;
+        font-size: 24px;
+    }
+
+    #navMenu {
+        display: none;
+        padding-top: 10px;
+    }
+
+    #navMenu.show {
+        display: block;
+    }
+
+    #navMenu a {
+        display: block;
+        padding: 12px;
+        margin: 5px 0;
+    }
+        }
 .header {
     background: #111;
     color: white;
@@ -238,12 +274,17 @@ button:hover {
     <h2>Deepak Website</h2>
 </div>
 
-<nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-</nav>
+<div class="menu-bar">
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav id="navMenu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</div>
 
 <div class="hero" id="home">
     <h1>Welcome to Deepak Website 👋</h1>
@@ -348,7 +389,11 @@ button:hover {
 
     <p>© 2026 Deepak Website. All Rights Reserved.</p>
 </footer>  
-
+<script>
+function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("show");
+}
+</script>
 </script>
 
 </body>
